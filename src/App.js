@@ -19,7 +19,10 @@ function App() {
           element: <Home></Home>
         },
         {
-          path: '/phone',
+          path: '/phones/:id',
+          loader: async () => {
+            return fetch('http://localhost:5000/phones/')
+          },
           element: <Phone></Phone>,
         }
       ]
